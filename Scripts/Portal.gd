@@ -27,18 +27,21 @@ func _physics_process(delta):
 		# Get the input direction and handle the movement/deceleration.
 		var direction = Input.get_axis("left", "right")
 		if direction:
+			# Set facing direction
 			if direction < 0:
 				sprite.flip_h = true
 			else:
 				sprite.flip_h = false
 				
-			velocity.x = direction * SPEED
+			velocity.x = move_toward(velocity.x, direction * SPEED, SPEED / 10)
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, SPEED / 5)
 		
-		if Input.is_action_just_pressed("switch"):
-			active = false
+		# Switch active portal
+		if Input.is_action_just_pressed("switch") and not other_portal.active and not Input.is_action_just_released("switch"):
+			Input.action_release("switch")
 			other_portal.active = true
+			active = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
