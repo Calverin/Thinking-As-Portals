@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="GMTK 2023"
-config/features=PackedStringArray("4.0", "GL Compatibility")
+run/main_scene="res://Scenes/root.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="GMTK 2023"
 
 [rendering]
 
