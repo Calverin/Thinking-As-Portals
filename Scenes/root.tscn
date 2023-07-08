@@ -12,7 +12,7 @@ size = Vector2(32, 32)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_144ia"]
 radius = 18.0
-height = 66.0
+height = 62.0
 
 [sub_resource type="GDScript" id="GDScript_popdh"]
 script/source = "extends CharacterBody2D
@@ -165,8 +165,8 @@ texture = ExtResource("6_cxyki")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Orange Portal"]
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_144ia")
-metadata/_edit_lock_ = true
 
 [node name="Blue Portal" type="CharacterBody2D" parent="World" groups=["Portal"]]
 position = Vector2(-37, -233)
