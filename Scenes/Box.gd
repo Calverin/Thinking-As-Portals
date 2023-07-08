@@ -1,16 +1,24 @@
-extends Area2D
+extends RigidBody2D
+
+signal Play_animation(bool)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass
+
+
+
+
+func _on_button_area_entered(area):
+	print("button pressed")
 	
-func _on_body_entered(body):
-	if body.is_in_group("Portal"):
-		get_tree().reload_current_scene()
-	pass
+	
+func _process(delta):
+	for body in get_colliding_bodies():
+		if(body.name == "button"):
+			print("button")
+			emit_signal("Play_animation",true)
+		else:
+			emit_signal("Play_animation",false)
+		
