@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://srsib4ht4xic"]
+
+[ext_resource type="Script" path="res://Scripts/gui.gd" id="1_jkgxr"]
+[ext_resource type="Texture2D" uid="uid://bha5k0dmr87k6" path="res://PNG/blue_button00.png" id="2_vk0io"]
+[ext_resource type="Texture2D" uid="uid://dh25xwl7pjfig" path="res://PNG/blue_button01.png" id="3_4bc63"]
+[ext_resource type="Script" path="res://Scripts/next_level.gd" id="4_0qsqt"]
+
+[sub_resource type="GDScript" id="GDScript_r8a40"]
+script/source = "extends MarginContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbvd7"]
+texture = ExtResource("2_vk0io")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjssu"]
+texture = ExtResource("3_4bc63")
+
+[node name="Win Screen" type="Node2D"]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+script = ExtResource("1_jkgxr")
+
+[node name="Overlay" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NextLevel" type="MarginContainer" parent="GUI/Overlay"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 324.0
+scale = Vector2(2, 2)
+script = SubResource("GDScript_r8a40")
+
+[node name="Panel" type="Panel" parent="GUI/Overlay/NextLevel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Overlay/NextLevel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI/Overlay/NextLevel/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(123.715, 25.08)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "You won! Click for fun."
+fit_content = true
+tab_size = 3
+
+[node name="Win Button" type="Button" parent="GUI/Overlay/NextLevel/VBoxContainer"]
+modulate = Color(1, 0.760784, 0.588235, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbvd7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kjssu")
+action_mode = 0
+text = "Cake?"
+icon = ExtResource("2_vk0io")
+flat = true
+clip_text = true
+icon_alignment = 1
+script = ExtResource("4_0qsqt")

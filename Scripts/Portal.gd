@@ -68,7 +68,7 @@ func _physics_process(delta):
 	
 	if entrance.has_overlapping_bodies():
 		for body in entrance.get_overlapping_bodies():
-			if body.name == "Box" and tp_cooldown == 0 and not other_portal.box_check.has_overlapping_bodies(): # and active:
+			if (body.name == "Box" or body.name == "Box2" or body.name == "Box3" or body.name == "Box4" or body.name == "Box5" or body.name == "Box6" or body.name == "Box7" or body.name == "Box8") and tp_cooldown == 0 and not other_portal.box_check.has_overlapping_bodies(): # and active:
 				body.goto_position = pos
 				body.center_position = other_portal.global_position
 				body.in_velocity = velocity

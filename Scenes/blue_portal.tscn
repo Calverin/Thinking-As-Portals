@@ -21,7 +21,7 @@ texture = ExtResource("2_ejy65")
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-13, -29, 16, -32, 16, -25, -11, -25, -11, 24, 17, 24, 17, 32, -13, 28, -16, 22, -16, -22)
+polygon = PackedVector2Array(-13, -29, 15, -30, 15, -25, -11, -25, -11, 24, 15, 24, 15, 30, -13, 28, -16, 22, -16, -22)
 
 [node name="Entrance" type="Area2D" parent="."]
 collision_layer = 4
