@@ -15,7 +15,7 @@ var out_velocity = null
 #	print("button pressed")
 	
 	
-func _process(delta):
+func _process(_delta):
 	if contact_monitor != null:
 		for body in get_colliding_bodies():
 			if(body.name == "button"):

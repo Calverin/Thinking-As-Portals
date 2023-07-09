@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfgrv8kep8kik"]
 
 [ext_resource type="PackedScene" uid="uid://bkd145xkdw8em" path="res://Scenes/gui.tscn" id="1_ctf2y"]
-[ext_resource type="Script" path="res://Scripts/World.gd" id="1_kcam4"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_kcam4"]
 [ext_resource type="TileSet" uid="uid://bs4xkmjoguubl" path="res://Sprites/lab.tres" id="2_gjj8i"]
 [ext_resource type="PackedScene" uid="uid://d1idcbe006jav" path="res://Scenes/orange_portal.tscn" id="3_pne35"]
 [ext_resource type="PackedScene" uid="uid://c5uo1umkhjlqb" path="res://Scenes/box.tscn" id="5_4e8cv"]
@@ -37,9 +37,11 @@ metadata/_edit_lock_ = true
 
 [node name="Orange Portal" parent="." instance=ExtResource("3_pne35")]
 position = Vector2(-1473, 262)
+rotation = 3.14159
 
 [node name="Blue Portal" parent="." instance=ExtResource("6_phdn8")]
 position = Vector2(-1269, 264)
+rotation = 3.14159
 
 [node name="Box" parent="." instance=ExtResource("5_4e8cv")]
 position = Vector2(-1232, -31)

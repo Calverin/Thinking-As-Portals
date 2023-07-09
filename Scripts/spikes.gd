@@ -16,7 +16,7 @@ extends Area2D
 #			get_tree().reload_current_scene()
 #		break
 
-func _process(delta):
+func _process(_delta):
 	for body in get_overlapping_bodies():
 		if (body.name == "Blue Portal" or body.name == "Orange Portal"):
 			get_tree().reload_current_scene()

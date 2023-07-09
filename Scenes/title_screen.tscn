@@ -7,16 +7,6 @@
 
 [sub_resource type="GDScript" id="GDScript_r8a40"]
 script/source = "extends MarginContainer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 "
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbvd7"]
@@ -80,3 +70,48 @@ flat = true
 clip_text = true
 icon_alignment = 1
 script = ExtResource("4_5fdq6")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GUI/Overlay"]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 24.0
+offset_right = 1136.0
+offset_bottom = 162.0
+text = "Controls:
+WASD - movement and jumping
+Spacebar - switch active portal
+Left/Right click or Q/E - rotate active portal
+R - Restart level"
+fit_content = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI/Overlay"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 392.0
+offset_bottom = 176.0
+text = "Credits:
+Calverin - Project Lead and Head Developer
+ChipChase - Developer
+J70 - UI and Level Design
+CheckMC - Moral Support
+
+Art used with a Commercial License from ExceptRea"
+fit_content = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="GUI/Overlay"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 200.0
+offset_right = 1120.0
+offset_bottom = 256.0
+text = "Teleport the generic cube to the red button to win!"
+fit_content = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="GUI/Overlay"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 240.0
+offset_right = 336.0
+offset_bottom = 296.0
+text = " - Made for the 2023 GMTK Game Jam by Current Project"
