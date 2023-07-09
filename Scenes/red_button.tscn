@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0gyos2gphgq6"]
+
+[ext_resource type="Script" path="res://Scripts/Red_Button.gd" id="1_ghivq"]
+[ext_resource type="Texture2D" uid="uid://bncbb0y1aivru" path="res://Sprites/button_pressed.png" id="2_1i52o"]
+[ext_resource type="Texture2D" uid="uid://ciutpghefgu8n" path="res://Sprites/button.png" id="3_ahith"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7rjgd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1i52o")
+}],
+"loop": true,
+"name": &"button pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ahith")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkmvs"]
+size = Vector2(23, 39.0059)
+
+[node name="Red_Button" type="Area2D"]
+position = Vector2(-1681, -80)
+rotation = 0.00627168
+script = ExtResource("1_ghivq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 6)
+sprite_frames = SubResource("SpriteFrames_7rjgd")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.497063)
+shape = SubResource("RectangleShape2D_gkmvs")
+metadata/_edit_lock_ = true

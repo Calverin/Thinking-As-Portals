@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://mv64vl401qnk"]
+
+[ext_resource type="Texture2D" uid="uid://vm7ivgd58555" path="res://Sprites/blue_button_pressed.png" id="1_163y0"]
+[ext_resource type="Script" path="res://Scripts/Blue_button.gd" id="1_hmj6m"]
+[ext_resource type="Texture2D" uid="uid://bu165af4ue8me" path="res://Sprites/blue_button.png" id="2_jwk7q"]
+[ext_resource type="Texture2D" uid="uid://b7hme6npduf0h" path="res://Sprites/Door.png" id="4_ds1x2"]
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="5_ehs8u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_siri8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_163y0")
+}],
+"loop": true,
+"name": &"button_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jwk7q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps1yf"]
+size = Vector2(23, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hefgj"]
+size = Vector2(10.9851, 31.1111)
+
+[node name="Blue button and door" type="Node2D"]
+
+[node name="Blue_button" type="Area2D" parent="."]
+script = ExtResource("1_hmj6m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Blue_button"]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_siri8")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue_button"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_ps1yf")
+debug_color = Color(0.882353, 0, 0, 0.419608)
+metadata/_edit_lock_ = true
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(93, -19)
+scale = Vector2(2.09375, 2.25)
+texture = ExtResource("4_ds1x2")
+script = ExtResource("5_ehs8u")
+move_dir = Vector2(0, -100)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody2D"]
+position = Vector2(-5.49254, 0.444443)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hefgj")
+
+[connection signal="open_door" from="Blue_button" to="Door" method="_on_blue_button_open_door"]
