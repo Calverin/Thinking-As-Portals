@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://8kq3qdvyy2cv"]
+[gd_scene load_steps=4 format=3 uid="uid://c5yw7hbu7l1f4"]
 
-[ext_resource type="Script" path="res://Scripts/Box.gd" id="1_hqnf8"]
-[ext_resource type="Texture2D" uid="uid://ciots4ux8u8uv" path="res://Sprites/Box.png" id="2_cutef"]
+[ext_resource type="Script" path="res://Scripts/Box.gd" id="1_wtqw1"]
+[ext_resource type="Texture2D" uid="uid://ciots4ux8u8uv" path="res://Sprites/Box.png" id="2_q6t13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrhdw"]
 size = Vector2(32, 32)
@@ -12,10 +12,10 @@ collision_mask = 3
 max_contacts_reported = 200
 contact_monitor = true
 can_sleep = false
-script = ExtResource("1_hqnf8")
+script = ExtResource("1_wtqw1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_cutef")
+texture = ExtResource("2_q6t13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nrhdw")
