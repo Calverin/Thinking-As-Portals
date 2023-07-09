@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bfgrv8kep8kik"]
 
-[ext_resource type="Script" path="res://Scripts/World.gd" id="1_kcam4"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_pbwdw"]
 [ext_resource type="TileSet" uid="uid://bs4xkmjoguubl" path="res://Sprites/lab.tres" id="2_gjj8i"]
 [ext_resource type="PackedScene" uid="uid://d1idcbe006jav" path="res://Scenes/orange_portal.tscn" id="3_pne35"]
-[ext_resource type="PackedScene" uid="uid://8kq3qdvyy2cv" path="res://Scenes/box.tscn" id="5_4e8cv"]
+[ext_resource type="PackedScene" uid="uid://c5uo1umkhjlqb" path="res://Scenes/box.tscn" id="5_4e8cv"]
 [ext_resource type="PackedScene" uid="uid://d0gyos2gphgq6" path="res://Scenes/red_button.tscn" id="6_citsj"]
 [ext_resource type="PackedScene" uid="uid://byuo46f4612p" path="res://Scenes/blue_portal.tscn" id="6_phdn8"]
 
@@ -20,7 +20,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="World" type="Node2D" parent="."]
-script = ExtResource("1_kcam4")
+script = ExtResource("1_pbwdw")
 
 [node name="Level" type="Node2D" parent="World"]
 
