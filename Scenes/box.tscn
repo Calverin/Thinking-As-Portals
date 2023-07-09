@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/box.gd" id="1_dawrq"]
 [ext_resource type="Texture2D" uid="uid://ciots4ux8u8uv" path="res://Sprites/Box.png" id="2_cutef"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrhdw"]
 size = Vector2(32, 32)
 
