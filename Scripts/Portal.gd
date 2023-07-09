@@ -66,17 +66,22 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	var pos = other_portal.position
-	pos += Vector2(cos(other_portal.rotation), sin(other_portal.rotation)) * 48
-	box_check.global_position = pos
-				
+	var pos = other_portal.box_check.global_position
+	#pos += Vector2(cos(other_portal.rotation), sin(other_portal.rotation)) * 38
+	#box_check.global_position = pos
+	
 	if entrance.has_overlapping_bodies():
 		for body in entrance.get_overlapping_bodies():
-			if body.name == "Box" and tp_cooldown == 0 and not box_check.has_overlapping_bodies(): # and active:
+			if body.name == "Box" and tp_cooldown == 0 and not other_portal.box_check.has_overlapping_bodies(): # and active:
 				body.goto_position = pos
+				body.center_position = other_portal.global_position
+				body.in_velocity = velocity
+				body.in_rotation = rotation_degrees
+				body.out_velocity = other_portal.velocity
+				body.out_rotation = other_portal.rotation_degrees
 				body.set_use_custom_integrator(true)
-				tp_cooldown = 10
-				other_portal.tp_cooldown = 5
+				tp_cooldown = 100
+				other_portal.tp_cooldown = 50
 
 #	for index in get_slide_collision_count():
 #		var collision = get_slide_collision(index)

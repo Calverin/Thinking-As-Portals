@@ -1,19 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://byuo46f4612p"]
+[gd_scene load_steps=7 format=3 uid="uid://byuo46f4612p"]
 
 [ext_resource type="Script" path="res://Scripts/portal.gd" id="1_rgtd8"]
 [ext_resource type="Texture2D" uid="uid://3wvugkuew2vu" path="res://Sprites/blue_portal.png" id="2_ejy65"]
+[ext_resource type="Texture2D" uid="uid://bdv7r6auhchbp" path="res://icon.svg" id="3_ie0lf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_144ia"]
 radius = 15.0
 height = 62.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2wte"]
-size = Vector2(4, 56)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjd7r"]
+size = Vector2(6, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8x4ch"]
 size = Vector2(31.5, 31.5)
 
 [node name="Blue Portal" type="CharacterBody2D" groups=["Portal"]]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_rgtd8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,18 +29,23 @@ shape = SubResource("CapsuleShape2D_144ia")
 metadata/_edit_lock_ = true
 
 [node name="Entrance" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 4
+priority = 1000
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance"]
-position = Vector2(14, 0)
-shape = SubResource("RectangleShape2D_c2wte")
-metadata/_edit_lock_ = true
+position = Vector2(13, 0)
+shape = SubResource("RectangleShape2D_tjd7r")
 
 [node name="Box Check" type="Area2D" parent="."]
+position = Vector2(48, 0)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box Check"]
 shape = SubResource("RectangleShape2D_8x4ch")
 metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Box Check"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_ie0lf")
