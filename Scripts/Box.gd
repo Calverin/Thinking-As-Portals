@@ -9,7 +9,9 @@ func _ready():
 var goto_position = null
 var center_position = null
 var in_velocity = null
+var in_rotation = null
 var out_velocity = null
+var out_rotation = null
 
 #func _on_button_area_entered(area):
 #	print("button pressed")
