@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct78my533tfno"]
+
+[ext_resource type="Script" path="res://Scripts/NextLevel.gd" id="1_7bako"]
+[ext_resource type="Texture2D" uid="uid://bha5k0dmr87k6" path="res://PNG/blue_button00.png" id="2_s3eir"]
+[ext_resource type="Texture2D" uid="uid://dh25xwl7pjfig" path="res://PNG/blue_button01.png" id="2_xsfuw"]
+[ext_resource type="Script" path="res://Sprites/Next-Level-Button.gd" id="4_hkj2y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbvd7"]
+texture = ExtResource("2_s3eir")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjssu"]
+texture = ExtResource("2_xsfuw")
+
+[node name="Overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NextLevel" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7bako")
+
+[node name="Panel" type="Panel" parent="NextLevel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NextLevel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NextLevel/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(123.715, 25.08)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level complete!"
+
+[node name="Button" type="Button" parent="NextLevel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbvd7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kjssu")
+action_mode = 0
+text = "Next level"
+icon = ExtResource("2_s3eir")
+flat = true
+clip_text = true
+icon_alignment = 1
+script = ExtResource("4_hkj2y")
