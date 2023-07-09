@@ -27,4 +27,5 @@ func _integrate_forces(state) -> void:
 		temp_transform.origin = goto_position
 		state.set_transform(temp_transform)
 		goto_position = null
+		state.linear_velocity = -state.linear_velocity
 	set_use_custom_integrator(false)
