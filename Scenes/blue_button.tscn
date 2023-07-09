@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjvsuifwyl6h1"]
+
+[ext_resource type="Script" path="res://Scripts/blue_button.gd" id="1_nxnvf"]
+[ext_resource type="Texture2D" uid="uid://vm7ivgd58555" path="res://Sprites/blue_button_pressed.png" id="2_rhyfr"]
+[ext_resource type="Texture2D" uid="uid://bu165af4ue8me" path="res://Sprites/blue_button.png" id="3_012jp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bsycf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rhyfr")
+}],
+"loop": true,
+"name": &"button_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_012jp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcud2"]
+size = Vector2(22, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uavb5"]
+size = Vector2(22, 20)
+
+[node name="blue_button" type="RigidBody2D"]
+freeze = true
+script = ExtResource("1_nxnvf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_bsycf")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_mcud2")
+debug_color = Color(0.882353, 0, 0, 0.419608)
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_uavb5")
+metadata/_edit_lock_ = true

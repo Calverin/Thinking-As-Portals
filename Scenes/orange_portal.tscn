@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1idcbe006jav"]
+
+[ext_resource type="Script" path="res://Scripts/Portal.gd" id="1_4hj37"]
+[ext_resource type="Texture2D" uid="uid://d0nvupxaqsh82" path="res://Sprites/orange_portal.png" id="2_m4ino"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_144ia"]
+radius = 15.0
+height = 62.0
+
+[node name="Orange Portal" type="CharacterBody2D" groups=["Portal"]]
+script = ExtResource("1_4hj37")
+active = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_m4ino")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_144ia")
+metadata/_edit_lock_ = true
