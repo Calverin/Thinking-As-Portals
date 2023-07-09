@@ -21,4 +21,7 @@ func _process(delta):
 			emit_signal("Play_animation",true)
 		else:
 			emit_signal("Play_animation",false)
+			
+		
+			
 		

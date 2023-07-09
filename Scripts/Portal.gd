@@ -69,6 +69,7 @@ func _physics_process(delta):
 			elif(blue_direction == false):
 				get_node("/root/ROOT/World/Box").position.x += 43
 		
+		
 			
 			
 func teleport_box(other_portal_position: Node2D) -> void:
