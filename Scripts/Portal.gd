@@ -76,12 +76,10 @@ func _physics_process(delta):
 				body.goto_position = pos
 				body.center_position = other_portal.global_position
 				body.in_velocity = velocity
-				body.in_rotation = rotation_degrees
 				body.out_velocity = other_portal.velocity
-				body.out_rotation = other_portal.rotation_degrees
 				body.set_use_custom_integrator(true)
-				tp_cooldown = 100
-				other_portal.tp_cooldown = 50
+				tp_cooldown = 50
+				other_portal.tp_cooldown = 25
 
 #	for index in get_slide_collision_count():
 #		var collision = get_slide_collision(index)
