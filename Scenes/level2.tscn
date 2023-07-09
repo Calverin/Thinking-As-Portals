@@ -40,11 +40,12 @@ layer_1/tile_data = PackedInt32Array(131070, 131073, 4, 196606, 131073, 5, 26214
 metadata/_edit_lock_ = true
 
 [node name="Box" parent="." instance=ExtResource("6_taghx")]
-position = Vector2(-1194, -256)
+position = Vector2(-1204, -241)
+collision_layer = 4
 
 [node name="Orange Portal" parent="." instance=ExtResource("4_g0308")]
 position = Vector2(-1724, -146)
 
 [node name="Blue Portal" parent="." instance=ExtResource("5_uh1rs")]
-position = Vector2(-1191, 159)
+position = Vector2(-1194, 143)
 rotation = -1.5708

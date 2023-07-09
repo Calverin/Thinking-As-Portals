@@ -47,5 +47,6 @@ shape = SubResource("RectangleShape2D_8x4ch")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Box Check"]
+visible = false
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_ie0lf")

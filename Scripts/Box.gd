@@ -28,7 +28,7 @@ func _process(delta):
 
 func _integrate_forces(state) -> void:
 	if goto_position != null:
-		var out_speed = min(max(abs(linear_velocity.x), abs(linear_velocity.y)), 800) * 0.9 # Lose a bit of velocity
+		var out_speed = min(max(abs(linear_velocity.x) + abs(in_velocity.x) + abs(out_velocity.x), abs(linear_velocity.y) + abs(in_velocity.y) + abs(out_velocity.y)), 800) * 0.9 # Lose a bit of velocity
 		var temp_transform = state.get_transform()
 		temp_transform.origin = goto_position
 		state.set_transform(temp_transform)
