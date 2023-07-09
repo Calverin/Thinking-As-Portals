@@ -7,6 +7,11 @@ func _ready():
 	pass
 
 var goto_position = null
+var center_position = null
+var in_velocity = null
+var in_rotation = null
+var out_velocity = null
+var out_rotation = null
 
 #func _on_button_area_entered(area):
 #	print("button pressed")
@@ -27,6 +32,7 @@ func _integrate_forces(state) -> void:
 		var temp_transform = state.get_transform()
 		temp_transform.origin = goto_position
 		state.set_transform(temp_transform)
+		linear_velocity = Vector2(0, 0)
+		apply_central_impulse((goto_position - center_position).normalized() * out_speed)
 		goto_position = null
-		state.linear_velocity = -state.linear_velocity
 	set_use_custom_integrator(false)
