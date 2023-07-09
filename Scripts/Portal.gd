@@ -12,16 +12,15 @@ const JUMP_VELOCITY = -400.0
 @onready var box_check = $"Box Check"
 
 var tp_cooldown = 10
-var good_location = false
+var coyote_time = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
+	
 	# Add the gravity.
-	
-	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
@@ -29,18 +28,17 @@ func _physics_process(delta):
 	# If this is the active portal, allow movement
 	if active:
 		# Handle Jump.
-		if Input.is_action_just_pressed("up") and is_on_floor():
+		if Input.is_action_just_pressed("up") and (is_on_floor() or coyote_time > 0):
 			velocity.y = JUMP_VELOCITY
+		
+		if coyote_time > 0 and not is_on_floor():
+			coyote_time -= 1
+		elif is_on_floor():
+			coyote_time = 5
 	
 		# Get the input direction and handle the movement/deceleration.
 		var direction = Input.get_axis("left", "right")
 		if direction:
-			# Set facing direction
-#			if direction < 0:
-#				sprite.flip_h = true
-#			else:
-#				sprite.flip_h = false
-			
 			velocity.x = move_toward(velocity.x, direction * SPEED, SPEED / 10)
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED / 5)
@@ -67,8 +65,6 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	var pos = other_portal.box_check.global_position
-	#pos += Vector2(cos(other_portal.rotation), sin(other_portal.rotation)) * 38
-	#box_check.global_position = pos
 	
 	if entrance.has_overlapping_bodies():
 		for body in entrance.get_overlapping_bodies():
@@ -80,18 +76,3 @@ func _physics_process(delta):
 				body.set_use_custom_integrator(true)
 				tp_cooldown = 50
 				other_portal.tp_cooldown = 25
-
-#	for index in get_slide_collision_count():
-#		var collision = get_slide_collision(index)
-#		if (collision.get_collider().name == "Box") and active and tp_cooldown == 0:
-#			var pos = other_portal.position
-#
-#			if (other_portal.sprite.flip_h == true):
-#				pos.x -= 43
-#			elif (other_portal.sprite.flip_h == false):
-#				pos.x += 43
-#			collision.get_collider().goto_position = pos
-#			collision.get_collider().set_use_custom_integrator(true)
-#			print("tp!")
-#			tp_cooldown = 100
-#			other_portal.tp_cooldown = 100

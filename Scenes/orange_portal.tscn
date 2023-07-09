@@ -11,8 +11,8 @@ size = Vector2(9, 49)
 size = Vector2(31.5, 31.5)
 
 [node name="Orange Portal" type="CharacterBody2D" groups=["Portal"]]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 10
+collision_mask = 15
 script = ExtResource("1_685fk")
 active = true
 
