@@ -1,9 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0gyos2gphgq6"]
 
-[ext_resource type="Script" path="res://Scripts/red_button.gd" id="1_ghivq"]
+[ext_resource type="Script" path="res://Scripts/Red_Button.gd" id="1_ghivq"]
 [ext_resource type="Texture2D" uid="uid://bncbb0y1aivru" path="res://Sprites/button_pressed.png" id="2_1i52o"]
 [ext_resource type="Texture2D" uid="uid://ciutpghefgu8n" path="res://Sprites/button.png" id="3_ahith"]
-
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7rjgd"]
 animations = [{
