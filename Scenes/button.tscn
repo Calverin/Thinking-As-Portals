@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://yuist2qd67p6"]
+[gd_scene load_steps=6 format=3 uid="uid://d3g4f5q0jhqe6"]
 
-[ext_resource type="Script" path="res://Scripts/button.gd" id="1_beqff"]
+[ext_resource type="Script" path="res://Scripts/red_button.gd" id="1_3xeq0"]
 [ext_resource type="Texture2D" uid="uid://bncbb0y1aivru" path="res://Sprites/button_pressed.png" id="2_yki82"]
 [ext_resource type="Texture2D" uid="uid://ciutpghefgu8n" path="res://Sprites/button.png" id="3_xxipa"]
 
@@ -28,7 +28,7 @@ size = Vector2(23, 7)
 
 [node name="button" type="RigidBody2D"]
 freeze = true
-script = ExtResource("1_beqff")
+script = ExtResource("1_3xeq0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 6)

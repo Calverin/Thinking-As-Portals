@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://dhc3s73a73dlt"]
 
 [ext_resource type="TileSet" uid="uid://bs4xkmjoguubl" path="res://Sprites/lab.tres" id="1_du0ve"]
-[ext_resource type="Script" path="res://Scripts/World.gd" id="1_phfa6"]
-[ext_resource type="PackedScene" uid="uid://8kq3qdvyy2cv" path="res://Scenes/box.tscn" id="3_iup0f"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_lmik5"]
+[ext_resource type="PackedScene" uid="uid://c5uo1umkhjlqb" path="res://Scenes/box.tscn" id="3_iup0f"]
 [ext_resource type="PackedScene" uid="uid://d1idcbe006jav" path="res://Scenes/orange_portal.tscn" id="4_abopp"]
 [ext_resource type="PackedScene" uid="uid://byuo46f4612p" path="res://Scenes/blue_portal.tscn" id="5_qkiti"]
-[ext_resource type="PackedScene" uid="uid://mv64vl401qnk" path="res://Scenes/blue_button_and_door.tscn" id="6_ggped"]
+[ext_resource type="PackedScene" uid="uid://2c1i0ietycvm" path="res://Scenes/blue_button_and_door.tscn" id="6_ggped"]
 [ext_resource type="PackedScene" uid="uid://d0gyos2gphgq6" path="res://Scenes/red_button.tscn" id="7_m87kd"]
 
-[node name="ROOT" type="Node2D"]
+[node name="ROOT2" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-588.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -21,7 +21,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="World" type="Node2D" parent="."]
-script = ExtResource("1_phfa6")
+script = ExtResource("1_lmik5")
 
 [node name="Level" type="Node2D" parent="World"]
 
