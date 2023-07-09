@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://mv64vl401qnk"]
+[gd_scene load_steps=9 format=3 uid="uid://2c1i0ietycvm"]
 
 [ext_resource type="Texture2D" uid="uid://vm7ivgd58555" path="res://Sprites/blue_button_pressed.png" id="1_163y0"]
 [ext_resource type="Script" path="res://Scripts/Blue_button.gd" id="1_hmj6m"]
 [ext_resource type="Texture2D" uid="uid://bu165af4ue8me" path="res://Sprites/blue_button.png" id="2_jwk7q"]
 [ext_resource type="Texture2D" uid="uid://b7hme6npduf0h" path="res://Sprites/Door.png" id="4_ds1x2"]
-[ext_resource type="Script" path="res://Scripts/Door.gd" id="5_ehs8u"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="5_ehs8u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_siri8"]
 animations = [{
@@ -58,7 +58,6 @@ move_dir = Vector2(0, -100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody2D"]
 position = Vector2(-5.49254, 0.444443)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hefgj")
 
 [connection signal="open_door" from="Blue_button" to="Door" method="_on_blue_button_open_door"]
