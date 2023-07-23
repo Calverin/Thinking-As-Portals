@@ -74,5 +74,5 @@ func _physics_process(delta):
 				body.in_velocity = velocity
 				body.out_velocity = other_portal.velocity
 				body.set_use_custom_integrator(true)
-				tp_cooldown = 50
-				other_portal.tp_cooldown = 25
+				tp_cooldown = 5
+				other_portal.tp_cooldown = 2
